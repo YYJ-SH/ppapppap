@@ -17,6 +17,7 @@ import "./RegisterPark.css";
 import { client2 } from "../../../constant/client";
 import { MainContainer } from "../LoginPage/LoginPage";
 import styled from "styled-components";
+import CustomInput from "../../CustomInput";
 
 const { Option } = Select;
 
@@ -106,7 +107,7 @@ function RegisterPark() {
   //   },[]);
 
   const StyledDiv = styled(MainContainer)`
-    width: calc(100% - 500px);
+    width: calc(100% - 800px);
     height: auto;
 
     margin: 50px auto;
@@ -117,7 +118,16 @@ function RegisterPark() {
   `;
 
   return (
-    <StyledDiv>
+    <div>
+      <h2
+        style={{
+          textAlign: "center",
+          margin: "auto",
+          borderBottom: "1px solid #0b0b5c",
+        }}
+      >
+        주차장 등록하기
+      </h2>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Form
           layout="vertical"
@@ -128,8 +138,7 @@ function RegisterPark() {
           scrollToFirstError
           style={{ marginTop: 100 }}
         >
-          <h2>주차장 등록하기</h2>
-          <StyledFormItem
+          <CustomInput
             name="parkname"
             label="주차장 이름"
             rules={[
@@ -144,46 +153,9 @@ function RegisterPark() {
             ]}
           >
             <Input />
-          </StyledFormItem>
+          </CustomInput>
 
-          {/* <StyledFormItem
-        name="password"
-        label="password"
-        rules={[
-          {
-            required: true,
-            message: 'Please input your password!',
-          },
-        ]}
-        hasFeedback
-      >
-        <Input.Password />
-      </StyledFormItem>
-
-      <StyledFormItem
-        name="confirm"
-        label="Confirm Password"
-        dependencies={['password']}
-        hasFeedback
-        rules={[
-          {
-            required: true,
-            message: 'Please confirm your password!',
-          },
-          ({ getFieldValue }) => ({
-            validator(_, value) {
-              if (!value || getFieldValue('password') === value) {
-                return Promise.resolve();
-              }
-              return Promise.reject(new Error('The two passwords that you entered do not match!'));
-            },
-          }),
-        ]}
-      >
-        <Input.Password />
-      </StyledFormItem> */}
-
-          <StyledFormItem
+          <CustomInput
             name="building"
             label="건물명"
             tooltip="건물명을 입력해주세요."
@@ -196,9 +168,9 @@ function RegisterPark() {
             ]}
           >
             <Input />
-          </StyledFormItem>
+          </CustomInput>
 
-          <StyledFormItem
+          <CustomInput
             name="address"
             label="주소"
             tooltip="주소를 입력해주세요."
@@ -211,8 +183,8 @@ function RegisterPark() {
             ]}
           >
             <Input />
-          </StyledFormItem>
-          <StyledFormItem
+          </CustomInput>
+          <CustomInput
             name="freetime"
             label="무료 주차 시간"
             tooltip="무료 주차 시간을 입력해주세요."
@@ -229,9 +201,9 @@ function RegisterPark() {
             ]}
           >
             <Input />
-          </StyledFormItem>
+          </CustomInput>
 
-          <StyledFormItem
+          <CustomInput
             name="enablearea"
             label="주차 가용 공간"
             tooltip="주차 가용 공간을 입력해주세요."
@@ -248,8 +220,8 @@ function RegisterPark() {
             ]}
           >
             <Input />
-          </StyledFormItem>
-          <StyledFormItem
+          </CustomInput>
+          <CustomInput
             name="baserate"
             label="기본요금"
             tooltip="기본 요금을 입력해주세요."
@@ -266,9 +238,9 @@ function RegisterPark() {
             ]}
           >
             <Input />
-          </StyledFormItem>
+          </CustomInput>
 
-          <StyledFormItem
+          <CustomInput
             name="eleccharger"
             label="전기차 충전기(대)"
             tooltip="전기차를 입력해주세요."
@@ -282,9 +254,9 @@ function RegisterPark() {
             ]}
           >
             <Input />
-          </StyledFormItem>
+          </CustomInput>
 
-          <StyledFormItem
+          <CustomInput
             name="starttime"
             label="운영 시간"
             tooltip="운영 시간을 입력해주세요."
@@ -301,9 +273,9 @@ function RegisterPark() {
             ]}
           >
             <Input placeholder="yyyy-mm-dd" />
-          </StyledFormItem>
+          </CustomInput>
 
-          <StyledFormItem
+          <CustomInput
             name="allarea"
             label="주차공간(대)"
             tooltip="전체 주차 가능한 공간의 개수를 입력해주세요"
@@ -319,9 +291,9 @@ function RegisterPark() {
             ]}
           >
             <Input />
-          </StyledFormItem>
+          </CustomInput>
 
-          <StyledFormItem
+          <CustomInput
             name="endtime"
             label="운영종료시간(시)"
             tooltip="운영종료시간을 입력해주세요"
@@ -336,7 +308,7 @@ function RegisterPark() {
             ]}
           >
             <Input placeholder="yyyy-mm-dd 형식으로 입력해주세요" />
-          </StyledFormItem>
+          </CustomInput>
 
           {/* <StyledFormItem
         name="phone"
@@ -361,12 +333,12 @@ function RegisterPark() {
             style={{ marginLeft: "-135px" }}
           >
             <Button type="primary" htmlType="submit" block>
-              edit
+              등록하기
             </Button>
           </StyledFormItem>
         </Form>
       </div>
-    </StyledDiv>
+    </div>
   );
 }
 export default RegisterPark;

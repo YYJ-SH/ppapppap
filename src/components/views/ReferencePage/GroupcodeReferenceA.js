@@ -196,11 +196,7 @@ function SearchAllGroupsforA() {
       style={{
         minWidth: "50%",
         height: "100%",
-        display: "flex",
-        flexWrap: "wrap",
-        alignItems: "center",
-        alignContent: "center",
-        marginTop: "-100px",
+        marginTop: "100px",
         paddingBottom: "50px",
       }}
     >

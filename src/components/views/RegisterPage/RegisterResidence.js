@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./RegisterPark.css";
 import { client2 } from "../../../constant/client";
+import CustomInput from "../../CustomInput";
 
 const { Option } = Select;
 
@@ -123,8 +124,7 @@ function RegisterRegidence() {
   }, []);
 
   return (
-    <div>
-      <h2>정기권 사용자 등록</h2>
+    <div style={{ display: "flex", justifyContent: "center" }}>
       <Form
         {...formItemLayout}
         form={form}
@@ -133,56 +133,67 @@ function RegisterRegidence() {
         scrollToFirstError
         style={{ marginTop: 100, float: "left", marginLeft: 100 }}
       >
-        <Form.Item
-          name="carnum"
-          label="차량번호"
-          rules={[
-            {
-              type: "text",
-              message: "차량번호를 입력하세요",
-            },
-            {
-              required: true,
-              message: "차량번호를 입력해주세요.",
-            },
-          ]}
-          initialValue=""
+        <h2
+          style={{
+            textAlign: "center",
+            margin: "auto",
+            borderBottom: "1px solid #0b0b5c",
+            marginBottom: "50px",
+          }}
         >
-          <Input />
-        </Form.Item>
+          정기권 사용자 등록
+        </h2>
+        <div style={{ marginLeft: "60px" }}>
+          <CustomInput
+            name="carnum"
+            label="차량번호"
+            rules={[
+              {
+                type: "text",
+                message: "차량번호를 입력하세요",
+              },
+              {
+                required: true,
+                message: "차량번호를 입력해주세요.",
+              },
+            ]}
+            initialValue=""
+          >
+            <Input />
+          </CustomInput>
 
-        <Form.Item
-          name="owner"
-          label="소유주"
-          tooltip="소유주 이름을 입력해주세요."
-          rules={[
-            {
-              required: true,
-              message: "소유주분의 성함은 꼭 들어가야 하는 항목입니다!",
-              whitespace: true,
-            },
-          ]}
-          initialValue=""
-        >
-          <Input />
-        </Form.Item>
+          <CustomInput
+            name="owner"
+            label="소유주"
+            tooltip="소유주 이름을 입력해주세요."
+            rules={[
+              {
+                required: true,
+                message: "소유주분의 성함은 꼭 들어가야 하는 항목입니다!",
+                whitespace: true,
+              },
+            ]}
+            initialValue=""
+          >
+            <Input />
+          </CustomInput>
 
-        <Form.Item
-          name="resiaddress"
-          label="주소"
-          tooltip="주소를 입력해주세요."
-          rules={[
-            {
-              required: true,
-              message: "주소를  입력해주세요",
-              whitespace: true,
-            },
-          ]}
-          initialValue=""
-        >
-          <Input />
-        </Form.Item>
-        {/* <Form.Item
+          <CustomInput
+            name="resiaddress"
+            label="주소"
+            tooltip="주소를 입력해주세요."
+            rules={[
+              {
+                required: true,
+                message: "주소를  입력해주세요",
+                whitespace: true,
+              },
+            ]}
+            initialValue=""
+          >
+            <Input />
+          </CustomInput>
+          {/* <Form.Item
           name="startdate"
           label="시작 날짜"
           tooltip="정기권 시작 날짜를 입력해주세요"
@@ -203,24 +214,24 @@ function RegisterRegidence() {
           <Input placeholder="YYYY-MM-DD" />
         </Form.Item> */}
 
-        <Form.Item
-          name="enddate"
-          label="종료 날짜"
-          tooltip="정기권 종료 날짜를 입력해주세요"
-          placeholder="YYYY-MM-DD 형식으로 입력해주세요."
-          rules={[
-            {
-              required: true,
-              message: "무료 주차 시간을 입력해주세요",
-              // whitespace: false,
-            },
-          ]}
-          initialValue=""
-        >
-          <Input />
-        </Form.Item>
+          <CustomInput
+            name="enddate"
+            label="종료 날짜"
+            tooltip="정기권 종료 날짜를 입력해주세요"
+            placeholder="YYYY-MM-DD 형식으로 입력해주세요."
+            rules={[
+              {
+                required: true,
+                message: "무료 주차 시간을 입력해주세요",
+                // whitespace: false,
+              },
+            ]}
+            initialValue=""
+          >
+            <Input />
+          </CustomInput>
 
-        {/* <Form.Item
+          {/* <Form.Item
         name="parkname"
         
         label="주차장 이름"
@@ -236,6 +247,66 @@ function RegisterRegidence() {
         <disabled />
         </Form.Item> */}
 
+          <CustomInput
+            name="phone"
+            label="전화번호"
+            rules={[
+              {
+                required: true,
+                message: "전화번호를 입력해주세요.",
+              },
+            ]}
+            initialValue=""
+          >
+            <Input
+              style={{
+                width: "100%",
+              }}
+            />
+          </CustomInput>
+
+          <CustomInput
+            name="secondphone"
+            label="비상 연락처"
+            rules={[
+              {
+                required: true,
+                message: "비상 연락처를 입력해주세요.",
+              },
+            ]}
+            initialValue=""
+          >
+            <Input
+              style={{
+                width: "100%",
+              }}
+            />
+          </CustomInput>
+
+          {/* <Form.Item
+          name="carpicture"
+          label="차량 이미지"
+          tooltip="이미지 주소가 들어갑니다."
+          placeholder="이미지 주소"
+          rules={[
+
+            
+          ]}
+        >
+          <Input />
+        </Form.Item> */}
+
+          <CustomInput
+            name="feature"
+            label="차량 특징"
+            tooltip="차종과 색을입력"
+            placeholder="이미지 주소"
+            rules={[]}
+            initialValue={null}
+          >
+            <Input />
+          </CustomInput>
+        </div>
         <Form.Item
           name="groupcode"
           label="정기권 그룹이름"
@@ -261,69 +332,14 @@ function RegisterRegidence() {
           <Input disabled />
         </Form.Item>
 
-        <Form.Item
-          name="phone"
-          label="전화번호"
-          rules={[
-            {
-              required: true,
-              message: "전화번호를 입력해주세요.",
-            },
-          ]}
-          initialValue=""
-        >
-          <Input
-            style={{
-              width: "100%",
-            }}
-          />
-        </Form.Item>
-
-        <Form.Item
-          name="secondphone"
-          label="비상 연락처"
-          rules={[
-            {
-              required: true,
-              message: "비상 연락처를 입력해주세요.",
-            },
-          ]}
-          initialValue=""
-        >
-          <Input
-            style={{
-              width: "100%",
-            }}
-          />
-        </Form.Item>
-
-        {/* <Form.Item
-          name="carpicture"
-          label="차량 이미지"
-          tooltip="이미지 주소가 들어갑니다."
-          placeholder="이미지 주소"
-          rules={[
-
-            
-          ]}
-        >
-          <Input />
-        </Form.Item> */}
-
-        <Form.Item
-          name="feature"
-          label="차량 특징"
-          tooltip="차종과 색을입력"
-          placeholder="이미지 주소"
-          rules={[]}
-          initialValue={null}
-        >
-          <Input />
-        </Form.Item>
-
         <Form.Item {...tailFormItemLayout}>
-          <Button type="primary" htmlType="submit">
-            edit
+          <Button
+            type="primary"
+            htmlType="submit"
+            block
+            style={{ marginLeft: "-50px" }}
+          >
+            등록하기
           </Button>
         </Form.Item>
       </Form>

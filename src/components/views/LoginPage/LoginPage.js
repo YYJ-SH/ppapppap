@@ -81,15 +81,16 @@ function LoginPage() {
           <MainContainer>
             <div
               style={{
-                fontSize: "30px",
-                fontWeight: "bold",
-                color: "#2A314D",
-                marginBottom: "10px",
+                display: "flex",
+                alignContent: "center",
+                justifyContent: "center",
+                margin: "auto",
+                alignItems: "center",
               }}
             >
-              로그인
+              <img src="basiclogo.png" alt="basic" />
             </div>
-            <WelcomeText>WELCOME</WelcomeText>
+
             <InputContainer>
               <label>닉네임</label>
               <Input
@@ -98,7 +99,7 @@ function LoginPage() {
                 onChange={oneuserNameHandler}
               />
 
-              <label>패스워드</label>
+              <label>비밀번호</label>
               <Input
                 type="password"
                 value={password}

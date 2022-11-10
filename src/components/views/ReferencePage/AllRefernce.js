@@ -275,7 +275,21 @@ function SearchAllUser() {
   };
 
   return (
-    <>
+    <div
+      style={{
+        minWidth: "50%",
+        height: "100%",
+        display: "flex",
+        flexWrap: "wrap",
+        alignItems: "center",
+        alignContent: "center",
+        marginTop: "100px",
+        paddingBottom: "50px",
+      }}
+    >
+      <p style={{ fontSize: "40px", textAlign: "center", width: "100%" }}>
+        이용자 관리
+      </p>
       <Table
         columns={columns}
         dataSource={userdata}
@@ -292,7 +306,7 @@ function SearchAllUser() {
       >
         <UserUpdate record={modal?.username} />
       </Modal>
-    </>
+    </div>
   );
 }
 

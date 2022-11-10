@@ -225,13 +225,29 @@ function SearchResidence() {
     },
   ];
   return (
-    <Table
-      columns={columns}
-      dataSource={userdata}
-      pagination={{
-        position: ["none", "bottomCenter"],
+    <div
+      style={{
+        minWidth: "50%",
+        height: "100%",
+        display: "flex",
+        flexWrap: "wrap",
+        alignItems: "center",
+        alignContent: "center",
+        marginTop: "100px",
+        paddingBottom: "50px",
       }}
-    />
+    >
+      <p style={{ fontSize: "40px", textAlign: "center", width: "100%" }}>
+        정기권 사용자 조회
+      </p>
+      <Table
+        columns={columns}
+        dataSource={userdata}
+        pagination={{
+          position: ["none", "bottomCenter"],
+        }}
+      />
+    </div>
   );
 }
 

@@ -1,3 +1,5 @@
+/*eslint-disable */
+
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import moment from "moment";
 import { client } from "../constant/client";

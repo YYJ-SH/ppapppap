@@ -223,7 +223,7 @@ function SearchTables() {
       render: (text, index) => <Carimgbtn imgSrc={text} />,
     },
     {
-      title: "주차장 id(SYSADMIN)",
+      title: "주차장 id",
       dataIndex: "parkid",
       key: "parkid",
     },

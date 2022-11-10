@@ -126,7 +126,11 @@ const CustomInput = (props) => {
 
   return (
     <Wrap>
-      <Form.Item name={props.name} rules={props.rules}>
+      <Form.Item
+        name={props.name}
+        rules={props.rules}
+        initialValue={props.initialValue}
+      >
         <div class="container">
           <div class="group">
             <Input

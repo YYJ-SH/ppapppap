@@ -126,15 +126,7 @@ const Aside = () => {
       "",
       false
     ),
-    getItem(
-      <div onClick={() => (window.location.href = "/caraccess")}>
-        주차 현황
-      </div>,
-      "2",
-      <CarOutlined />,
-      "",
-      false
-    ),
+
     getItem(
       <div
         onClick={() => {
@@ -245,15 +237,7 @@ const Aside = () => {
       "",
       false
     ),
-    getItem(
-      <div onClick={() => (window.location.href = "/caraccess")}>
-        주차 현황
-      </div>,
-      "2",
-      <CarOutlined />,
-      "",
-      false
-    ),
+
     getItem(
       <div
         onClick={() => {
@@ -265,23 +249,6 @@ const Aside = () => {
       "sub1",
       <DesktopOutlined />,
       [
-        getItem(
-          <div onClick={() => (window.location.href = "/registerpark")}>
-            주차장 등록하기
-          </div>,
-          "3",
-          "",
-          false
-        ),
-        getItem(
-          <div onClick={() => (window.location.href = "/referencepark")}>
-            주차장 조회하기
-          </div>,
-          "4",
-          "",
-          false
-        ),
-
         getItem(
           <div onClick={() => (window.location.href = "/registergroup")}>
             그룹코드 등록/조회
